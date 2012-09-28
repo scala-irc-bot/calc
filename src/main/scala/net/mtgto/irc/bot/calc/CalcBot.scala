@@ -4,18 +4,18 @@ import net.mtgto.irc.{Bot, Client}
 import net.mtgto.irc.event.Message
 
 class CalcBot extends Bot {
-  private[this] def parse(input: String) = {
+  private[calc] def parse(input: String) = {
     Arith.parse(input)
   }
 
-  private[this] def eval(input: String) = {
+  private[calc] def eval(input: String): Option[Double] = {
     val result = Arith.parse(input)
     if (result.successful) {
       result.get match {
         case Arith.Value(_) =>
           // if input is only value, do nothing.
           None
-        case expr => Some(Arith.eval(expr))
+        case expr => Some(Arith.eval(expr).toDouble)
       }
     } else {
       None
