@@ -46,7 +46,7 @@ class Rational(
   def `%`(that: Rational): Rational = {
     require(that.numer != 0)
     val gcd = denom.gcd(that.denom)
-    Rational(numer * denom / gcd % (that.numer * that.denom / gcd), denom * that.denom / gcd)
+    Rational(numer * that.denom / gcd % (that.numer * denom / gcd), denom * that.denom / gcd)
   }
 
   def toDouble: Double = {

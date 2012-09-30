@@ -48,8 +48,8 @@ class RationalSpec extends Specification {
     "modulo other rational" in {
       Rational(7) % Rational(3) === Rational(1)
       Rational(8) % Rational(3) === Rational(2)
-      Rational(1, 3) % Rational(1, 4) === Rational(1, 4)
-      Rational(1, 4) % Rational(1, 3) === Rational(1, 12)
+      Rational(1, 3) % Rational(1, 4) === Rational(1, 12)
+      Rational(1, 4) % Rational(1, 3) === Rational(1, 4)
     }
   }
 }
