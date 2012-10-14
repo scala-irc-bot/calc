@@ -49,6 +49,11 @@ class Rational(
     Rational(numer * that.denom / gcd % (that.numer * denom / gcd), denom * that.denom / gcd)
   }
 
+  def **(that: Rational): Rational = {
+    require(that.denom == 1 && that.numer >= 0 && that.numer <= Int.MaxValue)
+    Rational(numer.pow(that.numer.toInt), denom.pow(that.numer.toInt))
+  }
+
   def toDouble: Double = {
     numer.toDouble / denom.toDouble
   }

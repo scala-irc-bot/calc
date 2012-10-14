@@ -26,6 +26,19 @@ class CalcBotSpec extends Specification {
       calcBot.eval("2.5 * 3.7") must beSome(9.25)
       calcBot.eval("1 - + 3") must beSome(-2)
       calcBot.eval("1 - - 3") must beSome(4)
+      "exponent" in {
+        calcBot.eval("2 ** 0") must beSome(1)
+        calcBot.eval("2 ** 3") must beSome(8)
+        calcBot.eval("2 ** 3 ** 2") must beSome(512)
+        calcBot.eval("(2 ** 3) ** 2") must beSome(64)
+      }
+    }
+
+    "evaluate throwable furmulas" in {
+      calcBot.eval("1 / 0") must throwA[RuntimeException]
+      calcBot.eval("100 / (10 - 10)") must throwA[RuntimeException]
+      calcBot.eval("10 ** (1/2)") must throwA[RuntimeException]
+      calcBot.eval("10 ** -2") must throwA[RuntimeException]
     }
   }
 }
