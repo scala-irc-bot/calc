@@ -38,6 +38,10 @@ protected object Arith extends JavaTokenParsers {
     case value => Value(Rational(BigDecimal(value)))
   } | "(" ~> expr <~ ")" ^^ {
     case expr => expr
+  } | "+" ~> floatingPointNumber ^^ {
+    case value => Value(Rational(BigDecimal(value)))
+  } | "-" ~> floatingPointNumber ^^ {
+    case value => Value(Rational(-BigDecimal(value)))
   }
 
   def parse(input: String) = {

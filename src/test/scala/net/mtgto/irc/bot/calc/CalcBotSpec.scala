@@ -24,6 +24,8 @@ class CalcBotSpec extends Specification {
       calcBot.eval("2 * (3 + 7)") must beSome(20)
       calcBot.eval("-3 * (((((-3)))))") must beSome(9)
       calcBot.eval("2.5 * 3.7") must beSome(9.25)
+      calcBot.eval("1 - + 3") must beSome(-2)
+      calcBot.eval("1 - - 3") must beSome(4)
     }
   }
 }
