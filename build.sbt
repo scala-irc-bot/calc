@@ -12,7 +12,7 @@ resolvers += "mtgto repos" at "http://scala-irc-bot.github.com/scala-irc-bot/mav
 
 libraryDependencies := Seq(
   "net.mtgto" %% "scala-irc-bot" % "0.1.0-SNAPSHOT",
-  "org.specs2" %% "specs2" % "1.12.1" % "test"
+  "org.specs2" %% "specs2" % "1.12.2" % "test"
 )
 
 scalacOptions ++= Seq("-deprecation", "-unchecked", "-encoding", "UTF8")
