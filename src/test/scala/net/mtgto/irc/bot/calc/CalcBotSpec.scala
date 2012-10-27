@@ -34,7 +34,7 @@ class CalcBotSpec extends Specification {
       }
     }
 
-    "evaluate throwable furmulas" in {
+    "evaluate throwable formulas" in {
       calcBot.eval("1 / 0") must throwA[RuntimeException]
       calcBot.eval("100 / (10 - 10)") must throwA[RuntimeException]
       calcBot.eval("10 ** (1/2)") must throwA[RuntimeException]
