@@ -16,3 +16,9 @@ libraryDependencies := Seq(
 )
 
 scalacOptions ++= Seq("-deprecation", "-unchecked", "-encoding", "UTF8")
+
+testOptions in Test += Tests.Argument("junitxml")
+
+seq(ScctPlugin.instrumentSettings : _*)
+
+org.scalastyle.sbt.ScalastylePlugin.Settings
