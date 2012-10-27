@@ -32,6 +32,12 @@ class CalcBotSpec extends Specification {
         calcBot.eval("2 ** 3 ** 2") must beSome(512)
         calcBot.eval("(2 ** 3) ** 2") must beSome(64)
       }
+      "modulo" in {
+        calcBot.eval("10 % 3") must beSome(1)
+        calcBot.eval("10 % -3") must beSome(1)
+        calcBot.eval("-10 % 3") must beSome(-1)
+        calcBot.eval("-10 % -3") must beSome(-1)
+      }
     }
 
     "evaluate throwable formulas" in {
