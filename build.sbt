@@ -11,9 +11,9 @@ scalaVersion := "2.9.2"
 resolvers += "mtgto repos" at "http://scala-irc-bot.github.com/scala-irc-bot/maven/"
 
 libraryDependencies := Seq(
-  "net.mtgto" %% "scala-irc-bot" % "0.1.0-SNAPSHOT",
+  "net.mtgto" %% "scala-irc-bot" % "0.2.0-SNAPSHOT",
   "junit" % "junit" % "4.10" % "test",
-  "org.specs2" %% "specs2" % "1.12.2" % "test"
+  "org.specs2" %% "specs2" % "1.12.3" % "test"
 )
 
 scalacOptions ++= Seq("-deprecation", "-unchecked", "-encoding", "UTF8")

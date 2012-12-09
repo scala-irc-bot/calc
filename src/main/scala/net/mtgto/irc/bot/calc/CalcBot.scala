@@ -22,9 +22,9 @@ class CalcBot extends Bot {
     }
   }
 
-  override def onMessage(message: Message): Unit = {
+  override def onMessage(client: Client, message: Message): Unit = {
     eval(message.text) match {
-      case Some(value) => Client.sendNotice(message.channel, value.toString)
+      case Some(value) => client.sendNotice(message.channel, value.toString)
       case _ => ()
     }
   }
