@@ -8,6 +8,8 @@ version := "0.0.1-SNAPSHOT"
 
 scalaVersion := "2.9.2"
 
+crossScalaVersions := Seq("2.9.2", "2.10.0")
+
 resolvers += "mtgto repos" at "http://scala-irc-bot.github.com/scala-irc-bot/maven/"
 
 libraryDependencies := Seq(
